@@ -3,6 +3,7 @@ package main
 import (
 	"GOTODO/database"
 	"GOTODO/handlers"
+
 	"github.com/gin-gonic/gin"
 )
 
@@ -14,5 +15,7 @@ func main() {
 	//Router.Use(cors.Default())
 	Router.POST("/addtodo", handlers.CreateTodo)
 	Router.GET("/", handlers.GetTodos)
+	Router.GET("/:id", handlers.Findtodo)
+	Router.DELETE("/:id", handlers.Deletetodo)
 	Router.Run("localhost:3000")
 }
