@@ -10,7 +10,7 @@ func ConnectDatabase()  {
 	var err error
     DB, err = gorm.Open(sqlite.Open("todos.db"), &gorm.Config{})
     if err != nil {
-        log.Fatal("Failed to connect to the database!", err)
+        log.Fatal("Failed to connect to the database Please restart the server!", err)
     }
 	err = DB.AutoMigrate(&Todo{})
     if err != nil {
